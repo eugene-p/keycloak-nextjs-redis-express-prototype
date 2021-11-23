@@ -1,0 +1,9 @@
+.brand {
+    @apply pl-6 text-2xl text-blue-800 inline-block flex-grow;
+    @apply sm:m-auto sm:text-left;
+}
+
+.header{
+    @apply py-3 flex flex-col sm:flex-row text-center sm:text-left;
+    @apply border-b-2 border-gray-300;
+}
