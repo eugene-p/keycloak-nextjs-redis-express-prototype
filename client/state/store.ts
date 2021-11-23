@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import vehicalesReducer from './slices/Vehicales'
+import envReducer from './slices/Env'
 
 const store = configureStore({
   reducer: {
-    vehicales: vehicalesReducer,
+    vehicales: vehicalesReducer
+    , env: envReducer
   },
 })
 

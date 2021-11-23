@@ -17,10 +17,8 @@ import Icon from 'ol/style/Icon';
 import RenderFeature from 'ol/render/Feature';
 import { Feature } from 'ol';
 
-
-type MapWrapperProps = {
-  cars: string
-}
+import {getVehicalesString, fetchVehicles, getLoading} from '@slice/Vehicales'
+import { useAppDispatch, useAppSelector as useSelector } from '@state/hooks'
 
 const getFeatureStyle = (feature: RenderFeature | Feature<Geometry>): Style => {
   const title = `${feature.getProperties().name} by ${feature.getProperties().driver.name}`,
@@ -40,12 +38,27 @@ const getFeatureStyle = (feature: RenderFeature | Feature<Geometry>): Style => {
     })
 }
 
-const MapWrapper:FC<MapWrapperProps> = ({cars}) => {
+const MapWrapper:FC = () => {
+  const dispatch = useAppDispatch()
   const [map, setMap] = useState<Map>()
   const [featureLayer, setFeatureLayer] = useState<VectorLayer<VectorSource<Geometry>>>()
 
+  const cars = useSelector(getVehicalesString);
+  const loading = useSelector(getLoading);
+
+  // Loading vehicle data
   useEffect(() => {
-    if (cars) {
+    const timer=setInterval(() => {
+      if (!loading) {
+        dispatch(fetchVehicles())
+      }
+    }, 1000)
+    return () => clearInterval(timer);
+  }, [])
+
+  // Updating vegicle layer state
+  useEffect(() => {
+    if (cars && cars != '') {
       const format = new GeoJSON({
         dataProjection: 'EPSG:4326',
         featureProjection: 'EPSG:3857'
@@ -64,7 +77,8 @@ const MapWrapper:FC<MapWrapperProps> = ({cars}) => {
     }
   }, [cars])
 
-   useEffect( () => {
+  // Setting up the map
+  useEffect( () => {
     const initalFeaturesLayer = new VectorLayer({
       source: new VectorSource()
      , style: getFeatureStyle

@@ -71,6 +71,9 @@
           "client": {
             "demo-app": [
               "user"
+            ],
+            "demo-api": [
+              "api-user"
             ]
           }
         },
@@ -334,6 +337,21 @@
           "composite": false,
           "clientRole": true,
           "containerId": "458d7db1-80ac-430e-976d-82dc7ff06ea1",
+          "attributes": {}
+        }
+      ],
+      "demo-api": [
+        {
+          "id": "ad1db4b8-be6d-4060-953c-cf9c95b93afc",
+          "name": "api-user",
+          "composite": true,
+          "composites": {
+            "realm": [
+              "app-user"
+            ]
+          },
+          "clientRole": true,
+          "containerId": "1ea63fef-ffb1-4c5a-9cfb-4054ab446eff",
           "attributes": {}
         }
       ],
@@ -638,6 +656,74 @@
       "authenticationFlowBindingOverrides": {},
       "fullScopeAllowed": false,
       "nodeReRegistrationTimeout": 0,
+      "defaultClientScopes": [
+        "web-origins",
+        "profile",
+        "roles",
+        "email"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt"
+      ]
+    },
+    {
+      "id": "1ea63fef-ffb1-4c5a-9cfb-4054ab446eff",
+      "clientId": "demo-api",
+      "rootUrl": "",
+      "baseUrl": "http://localhost:3011/",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "**********",
+      "redirectUris": [
+        ""
+      ],
+      "webOrigins": [],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "publicClient": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "attributes": {
+        "access.token.lifespan": "3600",
+        "saml.force.post.binding": "false",
+        "saml.multivalued.roles": "false",
+        "token.endpoint.auth.signing.alg": "ES256",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "use.jwks.url": "true",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "saml.server.signature.keyinfo.ext": "false",
+        "use.refresh.tokens": "true",
+        "jwt.credential.certificate": "MIICnzCCAYcCBgF9TiTWEjANBgkqhkiG9w0BAQsFADATMREwDwYDVQQDDAhkZW1vLWFwaTAeFw0yMTExMjMxODUxMTZaFw0zMTExMjMxODUyNTZaMBMxETAPBgNVBAMMCGRlbW8tYXBpMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxKZKwHM/jNssZvpahS04YqwfQY+5IjigULJF3ntNX+GdwbQnjaHfEWJ4sKioPEPdC7yEIxnRQGe1Bbgux1Jx0aID6Hp6MNEeJwEh+nMsWjslkbaMzorzC4RXQ6IQwESpOEy97twTCaio9Fv63XkzNkQsXTBzeXFrvFDcD3kg1I3W3C15txvvD618UWCNoBhgc7Bp4TT4CJmMgzouivpLHT8WDvnIo0heSbKa3mtR5pnnCajjuMjefaJ0klNwD5dU2ArtHmIXFmegKO+JeajtGzrRIK3El30O7WKzthJ36YwpuKVs1n8AGLyrFdrJd/CxFCe2SovKpTJsd2FwEq52OQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCiXsxBV9mY+Rd50A62mLdeT+jRTpdPvWc7H/804qccyay3cEGTp63J0A8w/7EdA7CIPvcoyINhpso/Q2+LfxsB8ptaTubVsFL/S/RvpaQXY0iTErhLa7v15aPJxuw+Tynkm4VbIpIJsZ4S3UU/JHO2bcHaZPqK6Fe8wmoEPoPpf9Sp5HA5ga09wXcVkUazz2S6Sx8kz9gFDx3UVn1h9TisPmVvDo04Q9zdxtIKmRdLTFNFOgqRGLflpseDAF5UpXFVv1IQgYSZb8P9WqVWfmd8UHIlgLnBjecAyPhT48u/xtevnKT/1h6cZQch99GXggUzUe0IYJN8xDv3/ruILf3Q",
+        "oidc.ciba.grant.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "client_credentials.use_refresh_token": "false",
+        "require.pushed.authorization.requests": "false",
+        "saml.client.signature": "false",
+        "id.token.as.detached.signature": "false",
+        "saml.assertion.signature": "false",
+        "saml.encrypt": "false",
+        "saml.server.signature": "false",
+        "exclude.session.state.from.auth.response": "false",
+        "saml.artifact.binding": "false",
+        "saml_force_name_id_format": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "saml.authnstatement": "false",
+        "display.on.consent.screen": "false",
+        "saml.onetimeuse.condition": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
       "defaultClientScopes": [
         "web-origins",
         "profile",

@@ -8,14 +8,12 @@ import type { AppProps, AppContext } from 'next/app'
 import { SSRKeycloakProvider, SSRCookies } from '@react-keycloak/ssr'
 import { KeycloakConfig, KeycloakInitOptions } from 'keycloak-js'
 
-const keycloakCfg: KeycloakConfig = {
-  url: 'http://localhost:8080/auth',
-  realm: 'freshworks-demo',
-  clientId: 'demo-app'
-}
+import { Provider } from 'react-redux'
+import Store from '@state/store'
 
 interface InitialProps {
   cookies: unknown
+  , keycloakConfig: KeycloakConfig
 }
 
 const initialOptions: KeycloakInitOptions = {
@@ -23,14 +21,16 @@ const initialOptions: KeycloakInitOptions = {
   pkceMethod: 'S256'
 }
 
-function MyApp({ Component, pageProps, cookies }: AppProps & InitialProps) {
+function MyApp({ Component, pageProps, cookies, keycloakConfig }: AppProps & InitialProps) {
   return (
     <SSRKeycloakProvider
-      keycloakConfig={keycloakCfg}
+      keycloakConfig={keycloakConfig}
       persistor={SSRCookies(cookies)}
       initOptions={initialOptions}
     >
-      <Component {...pageProps} />
+      <Provider store={Store}>
+        <Component {...pageProps} />
+      </Provider>
     </SSRKeycloakProvider>
   )
 }
@@ -44,8 +44,14 @@ function parseCookies(req?: IncomingMessage) {
 
 MyApp.getInitialProps = async (context: AppContext) => {
   // Extract cookies from AppContext
+  // Load keycloak config
   return {
     cookies: parseCookies(context?.ctx?.req),
+    keycloakConfig: {
+      url: process.env.KEYCLOAK_URL || '',
+      realm: process.env.KEYCLOAK_REALM || '',
+      clientId: process.env.KEYCLOAK_CLIENT_ID || ''
+    }
   }
 }
 
