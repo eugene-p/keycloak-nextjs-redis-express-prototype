@@ -3,7 +3,7 @@ config({
     path: '.env.local'
 })
 
-import Express from 'express'
+import Express, { Response, Request, NextFunction } from 'express'
 import http from 'http'
 import cors from 'cors'
 import session from 'express-session'
@@ -25,7 +25,7 @@ app.use(keycloak?.middleware())
 app.use('/vehicles', Vehiles)
 app.use('/drivers', Drivers)
 
-app.use(function (err, req, res, next) {
+app.use(function (err: { stack: any }, _req:Request, res:Response, _next:NextFunction) {
     console.error(err.stack)
     res.status(500).send('Nothing')
 })
