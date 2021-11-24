@@ -8,6 +8,7 @@ import http from 'http'
 import cors from 'cors'
 import session from 'express-session'
 import Vehiles from './src/routes/vehicles'
+import Drivers from './src/routes/drivers'
 import initKeycloak, {memoryStore} from './src/initKeycloak'
 
 const app = Express();
@@ -22,6 +23,7 @@ app.use(cors())
 app.use(keycloak?.middleware())
 
 app.use('/vehicles', Vehiles)
+app.use('/drivers', Drivers)
 
 app.use(function (err, req, res, next) {
     console.error(err.stack)

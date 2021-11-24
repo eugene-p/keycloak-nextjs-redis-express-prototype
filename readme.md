@@ -2,6 +2,31 @@
 
 ## Folder structure
 
-1. *./data-generator* - Script used to generate data for application
-2. *./api* - An application API expressjs
-2. *./client* - Client application nextjs
+Befor running any of applications
+
+    ```docker compose up```
+
+keycloak is running on port 8080. Credentials admin:Pa55w0rd
+Import ```realm-export.json```
+
+### *./data-generator* - Script to fake realtime data
+to run
+
+```yarn```
+```yarn run dist;  yarn run start```
+
+### *./api* - An application API expressjs
+to run
+
+```yarn```
+```yarn run dist;  yarn run start```
+
+runs on port 3011
+
+### *./client* - Client application nextjs
+to run
+
+```yarn```
+```yarn run build; yarn run start``` or ```yarn run dev``` for a dev mode
+
+runs on port 3000

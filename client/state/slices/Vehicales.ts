@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { RootState } from '../store'
+import { env } from './Env'
+import {RootState} from '../store'
 import { FeatureCollection } from 'geojson'
 
 export interface vehicales {
@@ -10,10 +11,11 @@ export interface vehicales {
 
 export const fetchVehicles = createAsyncThunk<string, void>(
     'env/fetchVehicles',
-    async (_, {getState}) => {
-        const {port, host} = (getState()).env.api
-        const accessToken = (getState()).env.accessToken
-        const {jsonString} = (getState()).vehicales
+    async (_, {getState}):Promise<string> => {
+        const state = getState() as {env: env, vehicales: vehicales}
+        const {port, host} = state.env.api
+        const accessToken = state.env.accessToken
+        const jsonString = state.vehicales.jsonString
         console.log(port, host, accessToken)
         if (port && host && accessToken) {
             try {
@@ -30,7 +32,7 @@ export const fetchVehicles = createAsyncThunk<string, void>(
             }
         }
 
-        return jsonString
+        return jsonString || ''
     }
 )
 

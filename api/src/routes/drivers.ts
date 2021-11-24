@@ -14,7 +14,6 @@ const keycloak = getKeycloak()
 drivers
     .get(
         '/'
-        , keycloak.protect('realm:app-user')
         , async (_:Request, res:Response) => {
             res.status(501).send('Not implemented')
 
@@ -27,7 +26,6 @@ drivers
     )
     .get(
         '/:id'
-        , keycloak.protect()
         , async (req:Request, res:Response) => {
             res.status(501).send('Not implemented')
 
