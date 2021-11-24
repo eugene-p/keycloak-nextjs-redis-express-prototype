@@ -7,10 +7,6 @@ import {
     , DRIVERS_ACTIONS
 } from '../eventQueue';
 
-import getKeycloak from '../initKeycloak';
-
-const keycloak = getKeycloak()
-
 drivers
     .get(
         '/'
