@@ -21,7 +21,7 @@ import {getVehicalesString, fetchVehicles, getLoading} from '@slice/Vehicales'
 import { useAppDispatch, useAppSelector as useSelector } from '@state/hooks'
 
 const getFeatureStyle = (feature: RenderFeature | Feature<Geometry>): Style => {
-  const title = `${feature.getProperties().name} by ${feature.getProperties().driver.name}`,
+  const title = `${feature.getProperties().name} by ${feature.getProperties().driver.name} (${feature.getProperties().state.speed} km/h)`,
     rotation = feature.getProperties().state.direction * Math.PI/180
 
     return new Style({

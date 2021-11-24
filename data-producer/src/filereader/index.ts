@@ -30,7 +30,7 @@ export const processLineByLine = async (vehicleId: string) => {
                 , {...getFeatureProperties(gJson), id: vehicleId}
             );
 
-            await sleep(1000);
+            await sleep(100);
         }
 
         await events.EventEmitter.once(rl, 'close');
