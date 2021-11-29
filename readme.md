@@ -7,7 +7,8 @@ Befor running any of applications
     ```docker compose up```
 
 keycloak is running on port 8080. Credentials admin:Pa55w0rd
-Import ```realm-export.json```
+
+Click 'add/new realm' and select import file ```realm-export.json```.
 
 ### *./data-generator* - Script to fake realtime data
 to run
