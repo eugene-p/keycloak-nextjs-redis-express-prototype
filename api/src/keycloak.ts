@@ -1,5 +1,5 @@
 export default {
-    'realm': 'freshworks-demo',
+    'realm': 'yp-demo',
     'bearer-only': true,
     'auth-server-url': 'http://localhost:8080/auth/',
     'ssl-required': 'none',

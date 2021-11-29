@@ -1,6 +1,6 @@
 {
-  "id": "freshworks-demo",
-  "realm": "freshworks-demo",
+  "id": "yp-demo",
+  "realm": "yp-demo",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -51,7 +51,7 @@
         "description": "${role_uma_authorization}",
         "composite": false,
         "clientRole": false,
-        "containerId": "freshworks-demo",
+        "containerId": "yp-demo",
         "attributes": {}
       },
       {
@@ -60,7 +60,7 @@
         "description": "${role_offline-access}",
         "composite": false,
         "clientRole": false,
-        "containerId": "freshworks-demo",
+        "containerId": "yp-demo",
         "attributes": {}
       },
       {
@@ -78,12 +78,12 @@
           }
         },
         "clientRole": false,
-        "containerId": "freshworks-demo",
+        "containerId": "yp-demo",
         "attributes": {}
       },
       {
         "id": "aa8018a2-f379-4d20-ae12-62843bbe821b",
-        "name": "default-roles-freshworks-demo",
+        "name": "default-roles-yp-demo",
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
@@ -99,7 +99,7 @@
           }
         },
         "clientRole": false,
-        "containerId": "freshworks-demo",
+        "containerId": "yp-demo",
         "attributes": {}
       }
     ],
@@ -439,11 +439,11 @@
   "groups": [],
   "defaultRole": {
     "id": "aa8018a2-f379-4d20-ae12-62843bbe821b",
-    "name": "default-roles-freshworks-demo",
+    "name": "default-roles-yp-demo",
     "description": "${role_default-roles}",
     "composite": true,
     "clientRole": false,
-    "containerId": "freshworks-demo"
+    "containerId": "yp-demo"
   },
   "requiredCredentials": [
     "password"
@@ -506,13 +506,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/freshworks-demo/account/",
+      "baseUrl": "/realms/yp-demo/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/freshworks-demo/account/*"
+        "/realms/yp-demo/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -547,13 +547,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/freshworks-demo/account/",
+      "baseUrl": "/realms/yp-demo/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/freshworks-demo/account/*"
+        "/realms/yp-demo/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -845,13 +845,13 @@
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
       "rootUrl": "${authAdminUrl}",
-      "baseUrl": "/admin/freshworks-demo/console/",
+      "baseUrl": "/admin/yp-demo/console/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/freshworks-demo/console/*"
+        "/admin/yp-demo/console/*"
       ],
       "webOrigins": [
         "+"
