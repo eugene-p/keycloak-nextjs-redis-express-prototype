@@ -22,7 +22,7 @@ const IndexPage:FC<IndexPageProps> = (props) => {
 
   useEffect(() => {
     dispatch(setAccesssToken(keycloak?.token))
-  }, [initialized])
+  }, [initialized, keycloak?.token])
 
   return (
     <AuthLayout title="Demo | Map">
