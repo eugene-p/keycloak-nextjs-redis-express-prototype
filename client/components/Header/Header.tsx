@@ -9,7 +9,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className={style.header}>
-      <section className={style.brand}>Demo</section>
+      <section className={style.brand}>Prototype</section>
       <section>
         {keycloak?.authenticated ? (
           <>

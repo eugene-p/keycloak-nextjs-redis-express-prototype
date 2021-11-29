@@ -11,7 +11,7 @@ export interface LayoutProps {
 
 export const Layout: FC<LayoutProps> = ({
   children,
-  title = 'yp-demo'
+  title = 'yp-proto'
 }) => (
   <div>
     <Head>

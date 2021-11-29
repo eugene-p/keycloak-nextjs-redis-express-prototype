@@ -25,7 +25,7 @@ const IndexPage:FC<IndexPageProps> = (props) => {
   }, [initialized, keycloak?.token])
 
   return (
-    <AuthLayout title="Demo | Map">
+    <AuthLayout title="Prototype | Map">
       <Map />
     </AuthLayout>
   )

@@ -1,9 +1,9 @@
 export default {
-    'realm': 'yp-demo',
+    'realm': 'yp-proto',
     'bearer-only': true,
     'auth-server-url': 'http://localhost:8080/auth/',
     'ssl-required': 'none',
-    'resource': 'demo-api',
+    'resource': 'proto-api',
     'verify-token-audience': true,
     'use-resource-role-mappings': true,
     'confidential-port': 0,

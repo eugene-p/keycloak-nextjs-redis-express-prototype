@@ -1,6 +1,6 @@
 {
-  "id": "yp-demo",
-  "realm": "yp-demo",
+  "id": "yp-proto",
+  "realm": "yp-proto",
   "notBefore": 0,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
@@ -51,7 +51,7 @@
         "description": "${role_uma_authorization}",
         "composite": false,
         "clientRole": false,
-        "containerId": "yp-demo",
+        "containerId": "yp-proto",
         "attributes": {}
       },
       {
@@ -60,7 +60,7 @@
         "description": "${role_offline-access}",
         "composite": false,
         "clientRole": false,
-        "containerId": "yp-demo",
+        "containerId": "yp-proto",
         "attributes": {}
       },
       {
@@ -69,21 +69,21 @@
         "composite": true,
         "composites": {
           "client": {
-            "demo-app": [
+            "proto-app": [
               "user"
             ],
-            "demo-api": [
+            "proto-api": [
               "api-user"
             ]
           }
         },
         "clientRole": false,
-        "containerId": "yp-demo",
+        "containerId": "yp-proto",
         "attributes": {}
       },
       {
         "id": "aa8018a2-f379-4d20-ae12-62843bbe821b",
-        "name": "default-roles-yp-demo",
+        "name": "default-roles-yp-proto",
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
@@ -99,7 +99,7 @@
           }
         },
         "clientRole": false,
-        "containerId": "yp-demo",
+        "containerId": "yp-proto",
         "attributes": {}
       }
     ],
@@ -318,7 +318,7 @@
       ],
       "security-admin-console": [],
       "admin-cli": [],
-      "demo-app": [
+      "proto-app": [
         {
           "id": "5728560c-b120-47d5-9f56-c1ed386bf605",
           "name": "user",
@@ -340,7 +340,7 @@
           "attributes": {}
         }
       ],
-      "demo-api": [
+      "proto-api": [
         {
           "id": "ad1db4b8-be6d-4060-953c-cf9c95b93afc",
           "name": "api-user",
@@ -439,11 +439,11 @@
   "groups": [],
   "defaultRole": {
     "id": "aa8018a2-f379-4d20-ae12-62843bbe821b",
-    "name": "default-roles-yp-demo",
+    "name": "default-roles-yp-proto",
     "description": "${role_default-roles}",
     "composite": true,
     "clientRole": false,
-    "containerId": "yp-demo"
+    "containerId": "yp-proto"
   },
   "requiredCredentials": [
     "password"
@@ -506,13 +506,13 @@
       "clientId": "account",
       "name": "${client_account}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/yp-demo/account/",
+      "baseUrl": "/realms/yp-proto/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/yp-demo/account/*"
+        "/realms/yp-proto/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -547,13 +547,13 @@
       "clientId": "account-console",
       "name": "${client_account-console}",
       "rootUrl": "${authBaseUrl}",
-      "baseUrl": "/realms/yp-demo/account/",
+      "baseUrl": "/realms/yp-proto/account/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/realms/yp-demo/account/*"
+        "/realms/yp-proto/account/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -671,7 +671,7 @@
     },
     {
       "id": "1ea63fef-ffb1-4c5a-9cfb-4054ab446eff",
-      "clientId": "demo-api",
+      "clientId": "proto-api",
       "rootUrl": "",
       "baseUrl": "http://localhost:3011/",
       "surrogateAuthRequired": false,
@@ -739,7 +739,7 @@
     },
     {
       "id": "14363041-624c-404b-97e8-b3ad49cfbd63",
-      "clientId": "demo-app",
+      "clientId": "proto-app",
       "rootUrl": "http://localhost:3000",
       "adminUrl": "http://localhost:3000",
       "baseUrl": "/",
@@ -845,13 +845,13 @@
       "clientId": "security-admin-console",
       "name": "${client_security-admin-console}",
       "rootUrl": "${authAdminUrl}",
-      "baseUrl": "/admin/yp-demo/console/",
+      "baseUrl": "/admin/yp-proto/console/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "/admin/yp-demo/console/*"
+        "/admin/yp-proto/console/*"
       ],
       "webOrigins": [
         "+"

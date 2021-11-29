@@ -4,6 +4,6 @@ import style from './style/Footer.module.css'
 
 export const Footer: FC = () => {
   return (
-    <footer className={style.footer}>Demo</footer>
+    <footer className={style.footer}>Prototype</footer>
   )
 }
